@@ -1,32 +1,31 @@
-'use strict';
-
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
-
-let inputString = '';
-let currentLine = 0;
-
-process.stdin.on('data', function(inputStdin) {
-    inputString += inputStdin;
-});
-
-process.stdin.on('end', function() {
-    inputString = inputString.split('\n');
-
-    main();
-});
-
-function readLine() {
-    return inputString[currentLine++];
-}
-
 function staircase(n) {
-    // Write your code here
+  let str = ''
+  for (let i = 0; i < n * n; i++) {
+    let rowSize = n
+    let colSize = n
 
+    let actualRow = Math.floor(i / rowSize)
+    let actualCol = Math.floor(i % colSize)
+    if (i < n * n - 1) {
+      if (actualCol < n - actualRow - 1) {
+        str += ' '
+      } else {
+        str += '#'
+      }
+      if (actualCol === n - 1) {
+        str += '\n'
+      }
+    }
+  }
+  str += '#'
+  return str
 }
 
 function main() {
-    const n = parseInt(readLine().trim(), 10);
-
-    staircase(n);
+  const res = staircase(20)
+  console.log(res)
 }
+
+main()
+
+// stair case

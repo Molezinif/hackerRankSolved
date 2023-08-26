@@ -27,4 +27,4 @@ function main() {
 
 main()
 
-// wiki: here i draw an draft of the problem im trying to solve
+// wiki: miniMaxSum
