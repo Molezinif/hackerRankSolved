@@ -23,7 +23,7 @@ function timeConversion(s) {
       return `12:${leadingZero(minutes)}:${leadingZero(seconds)}`
     }
 
-    return `${leadingZero(minutes)}:${leadingZero(minutes)}:${leadingZero(
+    return `${leadingZero(hour + 12)}:${leadingZero(minutes)}:${leadingZero(
       seconds
     )}`
   }
@@ -36,7 +36,7 @@ function timeConversion(s) {
 }
 
 function main() {
-  const res = timeConversion('12:45:54PM')
+  const res = timeConversion('07:05:45PM')
   console.log(res)
 }
 
